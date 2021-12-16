@@ -11,10 +11,10 @@ fun main() {
     //sealed Class
    // val tile = Red("mushroom", 25)
 
-    val tile :Tile = Red("abc",34)
-    val points:Int = when(tile){
-        is Red -> tile.points *2
-        is Blue -> tile.points * 5
+    val tile :Tile = Red("abc","asa")
+    val points: String = when(tile){
+        is Red -> tile.points
+        is Blue -> (tile.points * 5).toString()
     }
     println(points)
 
@@ -41,5 +41,5 @@ enum class Day(val number:Int){
 }
 
 sealed class Tile
-class Red ( val type:String, val points:Int):Tile()
+class Red ( val type:String, val points:String):Tile()
 class Blue (val points:Int): Tile()

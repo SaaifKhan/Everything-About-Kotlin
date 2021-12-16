@@ -1,6 +1,6 @@
 fun main() {
     //wihtout scope
-    val emp = Employee()
+        val emp = Employee()
     val emp2: Employee? = null
     emp.age = 20
     emp.name = "saif"
@@ -34,6 +34,10 @@ fun main() {
         age = 35
         name = "PQR"
     }
+
+
+
+
 
 
 }
