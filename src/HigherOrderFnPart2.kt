@@ -30,5 +30,14 @@ fun rollDice(callBack: (result: Int) -> Unit): String {
 
 fun makeMyHero(realName: String, heroName: String, make: (String, String) -> String) {
 
+var a:String? = null
+    a = null
+    run(a)
 
+    a.let {
+    }
 }
+
+fun run(i:String?){}
+
+

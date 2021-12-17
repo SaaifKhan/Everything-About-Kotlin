@@ -7,6 +7,11 @@ fun main() {
 //        println(i)
 //    }
     day.printFormattedDay()
+    val data = getData()
+    when(data){
+        is Data.Success -> {}
+        is Data.Eror -> {}
+    }
 
     //sealed Class
    // val tile = Red("mushroom", 25)
@@ -33,6 +38,7 @@ enum class Day(val number:Int){
     fun printFormattedDay(){
         println("Day is $this")
 
+
     }
 
 
@@ -43,3 +49,38 @@ enum class Day(val number:Int){
 sealed class Tile
 class Red ( val type:String, val points:String):Tile()
 class Blue (val points:Int): Tile()
+
+
+enum class Color(val colorName:String,val colorValue:Int):doColor{
+    Red("Red",10) {
+        override fun doColor() {
+            TODO("Not yet implemented")
+        }
+    },
+    Blue("blue",20) {
+        override fun doColor() {
+            println("color with blue")
+        }
+    },
+        }
+
+
+interface doColor{
+    fun doColor()
+}
+
+abstract class A{
+
+}
+
+sealed class Data{
+    data class Success(val data:String) :Data()
+    data class Eror(val error: String) :Data()
+    object Loading
+}
+
+fun getData() : Data{
+    return Data.Success((100..1000).random().toString())
+
+}
+
